@@ -1,0 +1,27 @@
+[
+    {
+        "manufacturer_id":1,
+        "model":"TEST1",
+        "model_short":"TEST1",
+        "system_id":2,
+        "screen_size":"6.50\"",
+        "battery":4500,
+        "rear_camera_quantity":3,
+        "processor_id":2,"ram_size":"6GB",
+        "storage_size":"128GB",
+        "has_5g":0
+    },
+    {
+        "manufacturer_id":1,
+        "model":"TEST2",
+        "model_short":"TEST2",
+        "system_id":2,
+        "screen_size":"6.50\"",
+        "battery":4500,
+        "rear_camera_quantity":3,
+        "processor_id":2,"ram_size":"6GB",
+        "storage_size":"128GB",
+        "has_nfc":1,
+        "has_5g":0
+    }
+]

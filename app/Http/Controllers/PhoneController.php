@@ -135,4 +135,24 @@ class PhoneController extends Controller
 
         return response()->stream($callback, 200, $headers);
     }
+
+    public function import(){
+
+        $json = file_get_contents(storage_path('phone.json'));
+        $json = json_decode($json,true);
+        $response = []; $i = 0;
+
+        foreach($json as $item){
+            $i++;
+            try{
+                $result = Phone::create($item);
+                $response[] = ['record_number' => $i, 'status'=> 'success'];
+            }catch (\Illuminate\Database\QueryException $exception){
+                $errorInfo = $exception->errorInfo;
+                $response[] = ['record_number' => $i, 'status'=> 'failed', 'details' => $errorInfo];
+            }
+
+        }
+        return response()->json($response);
+    }
 }
