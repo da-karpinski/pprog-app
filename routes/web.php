@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PhoneController;
 use App\Http\Controllers\ProcessorController;
 use App\Http\Controllers\SystemController;
 use Illuminate\Support\Facades\Route;
@@ -18,6 +19,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Phones
+Route::get('api/phone', [PhoneController::class, 'list']);
+Route::get('api/phone/{id}', [PhoneController::class, 'select']);
+Route::post('api/phone', [PhoneController::class, 'add']);
+Route::patch('api/phone', [PhoneController::class, 'update']);
+Route::delete('api/phone', [PhoneController::class, 'delete']);
 
 //Processors
 Route::get('api/processor', [ProcessorController::class, 'list']);
