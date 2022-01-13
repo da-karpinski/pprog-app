@@ -22,6 +22,7 @@ Route::get('/', function () {
 });
 
 //Phones
+Route::get('api/phone/export', [PhoneController::class, 'export']);
 Route::get('api/phone', [PhoneController::class, 'list']);
 Route::get('api/phone/{id}', [PhoneController::class, 'select']);
 Route::post('api/phone', [PhoneController::class, 'add']);
