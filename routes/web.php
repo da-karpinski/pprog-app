@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ManufacturerController;
 use App\Http\Controllers\PhoneController;
 use App\Http\Controllers\ProcessorController;
 use App\Http\Controllers\SystemController;
@@ -40,3 +41,10 @@ Route::get('api/system/{id}', [SystemController::class, 'select']);
 Route::post('api/system', [SystemController::class, 'add']);
 Route::patch('api/system', [SystemController::class, 'update']);
 Route::delete('api/system', [SystemController::class, 'delete']);
+
+//Manufacturers
+Route::get('api/manufacturer', [ManufacturerController::class, 'list']);
+Route::get('api/manufacturer/{id}', [ManufacturerController::class, 'select']);
+Route::post('api/manufacturer', [ManufacturerController::class, 'add']);
+Route::patch('api/manufacturer', [ManufacturerController::class, 'update']);
+Route::delete('api/manufacturer', [ManufacturerController::class, 'delete']);
