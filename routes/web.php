@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\ApiController;
+use App\Http\Controllers\ProcessorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('api/test', [ApiController::class, 'list']); //db check
+//Processors
+Route::get('api/processor', [ProcessorController::class, 'list']);
+Route::get('api/processor/{id}', [ProcessorController::class, 'select']);
+Route::post('api/processor', [ProcessorController::class, 'add']);
+Route::patch('api/processor/{id}', [ProcessorController::class, 'update']);
+Route::delete('api/processor', [ProcessorController::class, 'delete']);
